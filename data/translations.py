@@ -23,6 +23,7 @@ TRANSLATIONS = {
         "nav_rules": "భద్రతా సూత్రాలు",
         "nav_quiz": "సైబర్ క్విజ్",
         "nav_report": "ఫిర్యాదు చేయండి (1930)",
+        "nav_field_activities": "క్షేత్రస్థాయి కార్యకలాపాలు",
         "nav_chatbot": "CAVI సైబర్ భద్రత సహాయకుడు",
         "nav_about": "ప్రాజెక్ట్ సమాచారం",
         
@@ -33,8 +34,9 @@ TRANSLATIONS = {
         "sec_04_quiz": "04 — సైబర్ క్విజ్ (CYBER QUIZ)",
         "sec_05_sims": "05 — స్కామ్ గుర్తించండి (SPOT THE SCAM)",
         "sec_06_report": "06 — ఫిర్యాదు చేయండి (REPORT FRAUD - 1930)",
-        "sec_07_chatbot": "07 — CAVI సైబర్ భద్రత సహాయకుడు (AI ASSISTANT)",
-        "sec_08_about": "08 — ప్రాజెక్ట్ సమాచారం (ABOUT CAVI)",
+        "sec_07_field": "07 — క్షేత్రస్థాయి కార్యకలాపాలు (FIELD ACTIVITIES)",
+        "sec_08_chatbot": "08 — CAVI సైబర్ భద్రత సహాయకుడు (AI ASSISTANT)",
+        "sec_09_about": "09 — ప్రాజెక్ట్ సమాచారం (ABOUT CAVI)",
         
         # Accessibility
         "font_size_label": "అక్షరాల పరిమాణం:",
@@ -123,6 +125,7 @@ TRANSLATIONS = {
         "nav_rules": "Safety Guide",
         "nav_quiz": "Cyber Quiz",
         "nav_report": "Report Fraud (1930)",
+        "nav_field_activities": "Field Activities",
         "nav_chatbot": "CAVI Cyber Safety Assistant",
         "nav_about": "About CAVI",
         
@@ -133,8 +136,9 @@ TRANSLATIONS = {
         "sec_04_quiz": "04 — CYBER QUIZ",
         "sec_05_sims": "05 — SPOT THE SCAM",
         "sec_06_report": "06 — REPORT FRAUD (1930)",
-        "sec_07_chatbot": "07 — CAVI CYBER SAFETY ASSISTANT (AI)",
-        "sec_08_about": "08 — ABOUT CAVI",
+        "sec_07_field": "07 — FIELD ACTIVITIES & COMMUNITY ENGAGEMENT",
+        "sec_08_chatbot": "08 — CAVI CYBER SAFETY ASSISTANT (AI)",
+        "sec_09_about": "09 — ABOUT CAVI",
         
         # Accessibility
         "font_size_label": "Text Size:",

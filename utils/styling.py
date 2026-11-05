@@ -555,6 +555,116 @@ def get_custom_css(font_size_mode: str = "normal") -> str:
             letter-spacing: 1px;
         }}
 
+        /* Field Activities Photo Gallery & Information Panel */
+        .field-info-panel {{
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 24px;
+            border: 1.5px solid #e2e8f0;
+            box-shadow: 0 4px 16px rgba(15, 43, 92, 0.05);
+            margin-bottom: 28px;
+        }}
+
+        .field-info-table {{
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 14px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }}
+
+        .field-info-table th, .field-info-table td {{
+            padding: 12px 18px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.98rem;
+        }}
+
+        .field-info-table th {{
+            background: #f8fafc;
+            color: #063970;
+            font-weight: 850;
+            width: 32%;
+        }}
+
+        .field-info-table td {{
+            background: #ffffff;
+            color: #1e293b;
+            font-weight: 600;
+        }}
+
+        .field-info-table tr:last-child th,
+        .field-info-table tr:last-child td {{
+            border-bottom: none;
+        }}
+
+        /* Photo Gallery Cards */
+        .field-photo-card {{
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1.5px solid #e2e8f0;
+            padding: 22px;
+            margin-bottom: 26px;
+            box-shadow: 0 4px 18px rgba(15, 43, 92, 0.06);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }}
+
+        .field-photo-card:hover {{
+            transform: translateY(-5px);
+            box-shadow: 0 16px 32px rgba(15, 43, 92, 0.12);
+            border-color: #38bdf8;
+        }}
+
+        .field-photo-title {{
+            color: #063970;
+            font-weight: 900;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            line-height: 1.35;
+        }}
+
+        .field-photo-desc {{
+            color: #475569;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            margin-top: 12px;
+            margin-bottom: 14px;
+            font-weight: 500;
+        }}
+
+        /* Lightbox Container */
+        .field-lightbox-box {{
+            background: linear-gradient(135deg, #091b36 0%, #063970 100%);
+            border-radius: 24px;
+            padding: 28px;
+            color: #ffffff;
+            margin-bottom: 32px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+            border: 2px solid #38bdf8;
+        }}
+
+        /* Activity Cards */
+        .field-activity-card {{
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            border: 1.5px solid #e2e8f0;
+            border-left: 5px solid #0b63ce;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+            margin-bottom: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }}
+
+        .field-activity-card:hover {{
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(11, 99, 206, 0.09);
+        }}
+
         /* Responsive Mobile Layout Adjustments */
         @media (max-width: 768px) {{
             .hero-banner {{

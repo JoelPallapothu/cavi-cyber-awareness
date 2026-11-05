@@ -119,7 +119,7 @@ def get_cached_tts_audio_base64(text: str, lang: str = "te") -> str:
     if not os.path.exists(audio_path):
         try:
             from gtts import gTTS
-            tts = gTTS(text=clean_text[:500], lang=lang, slow=False, timeout=5)
+            tts = gTTS(text=clean_text[:500], lang=lang, slow=False, timeout=1)
             tts.save(audio_path)
         except Exception:
             return ""

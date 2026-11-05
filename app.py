@@ -31,6 +31,7 @@ from components.video_center import render_video_center
 from components.safety_guide import render_safety_guide
 from components.quiz import render_quiz
 from components.emergency_view import render_emergency_page
+from components.field_activities import render_field_activities
 from components.chatbot import render_chatbot
 from components.about_view import render_about_page
 from components.poster_showcase import render_poster_showcase
@@ -315,15 +316,31 @@ elif current_page == "report":
     render_emergency_page()
 
 # ==============================================================================
-# 8. CAVI CYBER SAFETY ASSISTANT ROUTE (07 - AI CHATBOT)
+# 8. FIELD ACTIVITIES & COMMUNITY ENGAGEMENT (07)
 # ==============================================================================
-elif current_page == "chatbot":
+elif current_page == "field_activities":
     render_html(f"""
     <div class="section-header-box">
         <span class="section-number">07</span>
         <div>
             <h2 style="color: #063970; margin: 0; font-size: 1.9rem; font-weight: 900;">
-                🤖 {get_text('sec_07_chatbot', lang)}
+                📸 {get_text('sec_07_field', lang)}
+            </h2>
+        </div>
+    </div>
+    """)
+    render_field_activities()
+
+# ==============================================================================
+# 9. CAVI CYBER SAFETY ASSISTANT ROUTE (08 - AI CHATBOT)
+# ==============================================================================
+elif current_page == "chatbot":
+    render_html(f"""
+    <div class="section-header-box">
+        <span class="section-number">08</span>
+        <div>
+            <h2 style="color: #063970; margin: 0; font-size: 1.9rem; font-weight: 900;">
+                🤖 {get_text('sec_08_chatbot', lang)}
             </h2>
         </div>
     </div>
@@ -331,15 +348,15 @@ elif current_page == "chatbot":
     render_chatbot()
 
 # ==============================================================================
-# 9. ABOUT CAVI ROUTE (08)
+# 10. ABOUT CAVI ROUTE (09)
 # ==============================================================================
 elif current_page == "about":
     render_html(f"""
     <div class="section-header-box">
-        <span class="section-number">08</span>
+        <span class="section-number">09</span>
         <div>
             <h2 style="color: #063970; margin: 0; font-size: 1.9rem; font-weight: 900;">
-                ℹ️ {get_text('sec_08_about', lang)}
+                ℹ️ {get_text('sec_09_about', lang)}
             </h2>
         </div>
     </div>

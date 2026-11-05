@@ -50,7 +50,7 @@ def render_sidebar_nav():
         nav_menu_label = "📌 ప్రధాన మెనూ (Navigation)" if lang == "te" else "📌 Main Navigation"
         render_html(f"<div style='font-size: 0.82rem; font-weight: 850; color: #64748b; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; padding-left: 4px;'>{nav_menu_label}</div>")
 
-        # 9 Full Navigation Items - Complete names, zero truncation
+        # 10 Full Navigation Items - Complete names, zero truncation
         nav_items = [
             {"id": "home", "icon": "🏠", "label": get_text('nav_home', lang)},
             {"id": "frauds", "icon": "⚠️", "label": get_text('nav_frauds', lang)},
@@ -59,6 +59,7 @@ def render_sidebar_nav():
             {"id": "quiz", "icon": "🧠", "label": get_text('nav_quiz', lang)},
             {"id": "simulations", "icon": "🎭", "label": get_text('nav_simulations', lang)},
             {"id": "report", "icon": "🚨", "label": get_text('nav_report', lang)},
+            {"id": "field_activities", "icon": "📸", "label": get_text('nav_field_activities', lang)},
             {"id": "chatbot", "icon": "🤖", "label": get_text('nav_chatbot', lang)},
             {"id": "about", "icon": "ℹ️", "label": get_text('nav_about', lang)}
         ]
@@ -157,6 +158,7 @@ def render_header_nav():
         "quiz": get_text('nav_quiz', lang),
         "simulations": get_text('nav_simulations', lang),
         "report": get_text('nav_report', lang),
+        "field_activities": get_text('nav_field_activities', lang),
         "chatbot": get_text('nav_chatbot', lang),
         "about": get_text('nav_about', lang)
     }
