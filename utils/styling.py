@@ -344,7 +344,241 @@ def get_custom_css(font_size_mode: str = "normal") -> str:
             padding-right: 1.0rem !important;
         }}
 
-        /* Sidebar Navigation Buttons */
+        /* ==========================================================================
+           UNIVERSAL BUTTON CONTRAST ENGINE (BLUE BACKGROUNDS -> PURE WHITE TEXT)
+           Covers all button variants: Primary, Yes Understood, Quiz, Nav, Sims, Lightbox
+           Covers all interaction states: Default, Hover, Active, Focus, Focus-Visible, Selected
+           Enforces white text on button AND all descendants (p, span, div, strong, svg)
+           ========================================================================== */
+
+        /* 1. General Secondary Button Defaults */
+        .stButton > button,
+        [data-testid="stBaseButton-secondary"] {{
+            border-radius: 14px !important;
+            padding: 12px 18px !important;
+            font-weight: 750 !important;
+            font-size: calc(0.98rem * {heading_scale}) !important;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            border: 1px solid #cbd5e1 !important;
+            background: #ffffff !important;
+            color: #091b36 !important;
+            box-shadow: 0 3px 10px rgba(15, 43, 92, 0.06) !important;
+            min-height: 46px !important;
+        }}
+
+        .stButton > button *,
+        [data-testid="stBaseButton-secondary"] * {{
+            color: #091b36;
+        }}
+
+        /* Secondary Button Hover (Crisp ice-blue background with navy text) */
+        .stButton > button:not([kind="primary"]):not([data-testid="stBaseButton-primary"]):hover,
+        [data-testid="stBaseButton-secondary"]:hover {{
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 18px rgba(15, 43, 92, 0.14) !important;
+            border-color: #0b63ce !important;
+            background: #f0f7ff !important;
+            color: #0b63ce !important;
+        }}
+
+        .stButton > button:not([kind="primary"]):not([data-testid="stBaseButton-primary"]):hover *,
+        [data-testid="stBaseButton-secondary"]:hover * {{
+            color: #0b63ce !important;
+            -webkit-text-fill-color: #0b63ce !important;
+        }}
+
+        /* 2. Primary Buttons & All Buttons with Blue Backgrounds (Default State) */
+        .stButton > button[kind="primary"],
+        .stButton > button[data-testid="stBaseButton-primary"],
+        .stButton > button[data-testid="baseButton-primary"],
+        button[kind="primary"],
+        button[data-testid="stBaseButton-primary"],
+        button[data-testid="baseButton-primary"],
+        button[kind="primaryFormSubmit"],
+        [data-testid="stSidebar"] .stButton > button[kind="primary"],
+        [data-testid="stSidebar"] button[kind="primary"],
+        [data-testid="stSidebar"] [data-testid="stBaseButton-primary"],
+        [data-testid="stModal"] button[kind="primary"],
+        [data-testid="stDialog"] button[kind="primary"],
+        [data-testid="stPopover"] button[kind="primary"],
+        button[aria-selected="true"],
+        button[aria-pressed="true"],
+        .stButton > button[aria-selected="true"],
+        .stButton > button[aria-pressed="true"] {{
+            background: linear-gradient(135deg, #0b63ce 0%, #063970 100%) !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            border: 1px solid #063970 !important;
+            box-shadow: 0 4px 14px rgba(11, 99, 206, 0.35) !important;
+            font-weight: 850 !important;
+        }}
+
+        /* Explicit White Text Enforcement on ALL Child Elements */
+        .stButton > button[kind="primary"] *,
+        .stButton > button[data-testid="stBaseButton-primary"] *,
+        .stButton > button[data-testid="baseButton-primary"] *,
+        button[kind="primary"] *,
+        button[data-testid="stBaseButton-primary"] *,
+        button[data-testid="baseButton-primary"] *,
+        button[kind="primaryFormSubmit"] *,
+        [data-testid="stSidebar"] .stButton > button[kind="primary"] *,
+        [data-testid="stSidebar"] button[kind="primary"] *,
+        [data-testid="stSidebar"] [data-testid="stBaseButton-primary"] *,
+        [data-testid="stModal"] button[kind="primary"] *,
+        [data-testid="stDialog"] button[kind="primary"] *,
+        [data-testid="stPopover"] button[kind="primary"] *,
+        button[aria-selected="true"] *,
+        button[aria-pressed="true"] *,
+        .stButton > button[aria-selected="true"] *,
+        .stButton > button[aria-pressed="true"] *,
+        .stButton > button[kind="primary"] p,
+        .stButton > button[data-testid="stBaseButton-primary"] p,
+        button[kind="primary"] p,
+        button[data-testid="stBaseButton-primary"] p,
+        .stButton > button[kind="primary"] [data-testid="stMarkdownContainer"] p,
+        .stButton > button[data-testid="stBaseButton-primary"] [data-testid="stMarkdownContainer"] p,
+        button[kind="primary"] [data-testid="stMarkdownContainer"] p,
+        button[data-testid="stBaseButton-primary"] [data-testid="stMarkdownContainer"] p,
+        .stButton > button[kind="primary"] span,
+        .stButton > button[data-testid="stBaseButton-primary"] span,
+        button[kind="primary"] span,
+        button[data-testid="stBaseButton-primary"] span,
+        .stButton > button[kind="primary"] div,
+        .stButton > button[data-testid="stBaseButton-primary"] div,
+        button[kind="primary"] div,
+        button[data-testid="stBaseButton-primary"] div {{
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            fill: #ffffff !important;
+        }}
+
+        /* 3. Primary Button Hover State */
+        .stButton > button[kind="primary"]:hover,
+        .stButton > button[data-testid="stBaseButton-primary"]:hover,
+        .stButton > button[data-testid="baseButton-primary"]:hover,
+        button[kind="primary"]:hover,
+        button[data-testid="stBaseButton-primary"]:hover,
+        button[data-testid="baseButton-primary"]:hover,
+        [data-testid="stSidebar"] .stButton > button[kind="primary"]:hover,
+        [data-testid="stSidebar"] button[kind="primary"]:hover,
+        [data-testid="stSidebar"] [data-testid="stBaseButton-primary"]:hover {{
+            background: linear-gradient(135deg, #0284c7 0%, #0b63ce 100%) !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            border-color: #0284c7 !important;
+            box-shadow: 0 6px 18px rgba(11, 99, 206, 0.45) !important;
+            transform: translateY(-2px) !important;
+        }}
+
+        .stButton > button[kind="primary"]:hover *,
+        .stButton > button[data-testid="stBaseButton-primary"]:hover *,
+        .stButton > button[data-testid="baseButton-primary"]:hover *,
+        button[kind="primary"]:hover *,
+        button[data-testid="stBaseButton-primary"]:hover *,
+        button[data-testid="baseButton-primary"]:hover *,
+        .stButton > button[kind="primary"]:hover p,
+        .stButton > button[data-testid="stBaseButton-primary"]:hover p,
+        button[kind="primary"]:hover p,
+        button[data-testid="stBaseButton-primary"]:hover p,
+        .stButton > button[kind="primary"]:hover [data-testid="stMarkdownContainer"] p,
+        .stButton > button[data-testid="stBaseButton-primary"]:hover [data-testid="stMarkdownContainer"] p,
+        [data-testid="stSidebar"] .stButton > button[kind="primary"]:hover * {{
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            fill: #ffffff !important;
+        }}
+
+        /* 4. Active / Clicked State (When ANY button is clicked and becomes blue) */
+        .stButton > button[kind="primary"]:active,
+        .stButton > button[data-testid="stBaseButton-primary"]:active,
+        .stButton > button[data-testid="baseButton-primary"]:active,
+        button[kind="primary"]:active,
+        button[data-testid="stBaseButton-primary"]:active,
+        button[data-testid="baseButton-primary"]:active,
+        [data-testid="stSidebar"] .stButton > button[kind="primary"]:active,
+        [data-testid="stSidebar"] button[kind="primary"]:active,
+        [data-testid="stSidebar"] [data-testid="stBaseButton-primary"]:active,
+        .stButton > button:active,
+        [data-testid*="stBaseButton"]:active {{
+            background: linear-gradient(135deg, #063970 0%, #091b36 100%) !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            border-color: #063970 !important;
+            transform: translateY(1px) !important;
+        }}
+
+        .stButton > button[kind="primary"]:active *,
+        .stButton > button[data-testid="stBaseButton-primary"]:active *,
+        .stButton > button[data-testid="baseButton-primary"]:active *,
+        button[kind="primary"]:active *,
+        button[data-testid="stBaseButton-primary"]:active *,
+        button[data-testid="baseButton-primary"]:active *,
+        .stButton > button:active *,
+        [data-testid*="stBaseButton"]:active *,
+        .stButton > button:active p,
+        [data-testid*="stBaseButton"]:active p,
+        .stButton > button:active [data-testid="stMarkdownContainer"] p,
+        [data-testid*="stBaseButton"]:active [data-testid="stMarkdownContainer"] p,
+        [data-testid="stSidebar"] .stButton > button[kind="primary"]:active * {{
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            fill: #ffffff !important;
+        }}
+
+        /* 5. Focus & Focus-Visible States (Keyboard Navigation & Touch Taps) */
+        .stButton > button[kind="primary"]:focus,
+        .stButton > button[kind="primary"]:focus-visible,
+        .stButton > button[data-testid="stBaseButton-primary"]:focus,
+        .stButton > button[data-testid="stBaseButton-primary"]:focus-visible,
+        button[kind="primary"]:focus,
+        button[kind="primary"]:focus-visible,
+        button[data-testid="stBaseButton-primary"]:focus,
+        button[data-testid="stBaseButton-primary"]:focus-visible {{
+            background: linear-gradient(135deg, #0b63ce 0%, #063970 100%) !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            outline: 2px solid #38bdf8 !important;
+            outline-offset: 2px !important;
+        }}
+
+        .stButton > button[kind="primary"]:focus *,
+        .stButton > button[kind="primary"]:focus-visible *,
+        .stButton > button[data-testid="stBaseButton-primary"]:focus *,
+        .stButton > button[data-testid="stBaseButton-primary"]:focus-visible *,
+        button[kind="primary"]:focus *,
+        button[kind="primary"]:focus-visible *,
+        button[data-testid="stBaseButton-primary"]:focus *,
+        button[data-testid="stBaseButton-primary"]:focus-visible *,
+        .stButton > button[kind="primary"]:focus p,
+        .stButton > button[data-testid="stBaseButton-primary"]:focus p,
+        button[kind="primary"]:focus p,
+        button[data-testid="stBaseButton-primary"]:focus p {{
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            fill: #ffffff !important;
+        }}
+
+        /* 6. Disabled Primary State (High Contrast Readability) */
+        .stButton > button[kind="primary"]:disabled,
+        .stButton > button[data-testid="stBaseButton-primary"]:disabled,
+        button[kind="primary"]:disabled,
+        button[data-testid="stBaseButton-primary"]:disabled {{
+            background: #94a3b8 !important;
+            color: #f8fafc !important;
+            -webkit-text-fill-color: #f8fafc !important;
+            opacity: 0.8 !important;
+            cursor: not-allowed !important;
+        }}
+
+        .stButton > button[kind="primary"]:disabled *,
+        .stButton > button[data-testid="stBaseButton-primary"]:disabled *,
+        button[kind="primary"]:disabled *,
+        button[data-testid="stBaseButton-primary"]:disabled * {{
+            color: #f8fafc !important;
+            -webkit-text-fill-color: #f8fafc !important;
+        }}
+
+        /* 7. Sidebar Navigation Specific Styling */
         [data-testid="stSidebar"] .stButton > button {{
             width: 100% !important;
             text-align: left !important;
@@ -369,9 +603,16 @@ def get_custom_css(font_size_mode: str = "normal") -> str:
             transform: translateX(3px) !important;
         }}
 
-        [data-testid="stSidebar"] .stButton > button[kind="primary"] {{
+        [data-testid="stSidebar"] .stButton > button:hover * {{
+            color: #0b63ce !important;
+            -webkit-text-fill-color: #0b63ce !important;
+        }}
+
+        [data-testid="stSidebar"] .stButton > button[kind="primary"],
+        [data-testid="stSidebar"] .stButton > button[data-testid="stBaseButton-primary"] {{
             background: linear-gradient(135deg, #0b63ce 0%, #063970 100%) !important;
             color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
             border-left: 5px solid #38bdf8 !important;
             border-top: none !important;
             border-right: none !important;
@@ -380,41 +621,23 @@ def get_custom_css(font_size_mode: str = "normal") -> str:
             font-weight: 900 !important;
         }}
 
-        [data-testid="stSidebar"] .stButton > button[kind="primary"]:hover {{
+        [data-testid="stSidebar"] .stButton > button[kind="primary"] *,
+        [data-testid="stSidebar"] .stButton > button[data-testid="stBaseButton-primary"] * {{
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }}
+
+        [data-testid="stSidebar"] .stButton > button[kind="primary"]:hover,
+        [data-testid="stSidebar"] .stButton > button[data-testid="stBaseButton-primary"]:hover {{
             background: linear-gradient(135deg, #0284c7 0%, #0b63ce 100%) !important;
             color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
         }}
 
-        /* General Button Enhancements */
-        .stButton>button {{
-            border-radius: 14px !important;
-            padding: 12px 18px !important;
-            font-weight: 750 !important;
-            font-size: calc(0.98rem * {heading_scale}) !important;
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-            border: 1px solid #e2e8f0 !important;
-            background: #ffffff !important;
-            color: #091b36 !important;
-            box-shadow: 0 3px 10px rgba(15, 43, 92, 0.06) !important;
-            min-height: 46px !important;
-        }}
-
-        .stButton>button:hover {{
-            transform: translateY(-2px) !important;
-            box-shadow: 0 8px 18px rgba(15, 43, 92, 0.14) !important;
-            border-color: #cbd5e1 !important;
-        }}
-
-        .stButton>button:active {{
-            transform: translateY(1px) !important;
-        }}
-
-        /* Primary Buttons */
-        .stButton>button[kind="primary"] {{
-            background: linear-gradient(135deg, #0b63ce 0%, #063970 100%) !important;
+        [data-testid="stSidebar"] .stButton > button[kind="primary"]:hover *,
+        [data-testid="stSidebar"] .stButton > button[data-testid="stBaseButton-primary"]:hover * {{
             color: #ffffff !important;
-            border: none !important;
-            box-shadow: 0 4px 14px rgba(11, 99, 206, 0.3) !important;
+            -webkit-text-fill-color: #ffffff !important;
         }}
 
         /* Strict Contrast Enforcement for Footer */

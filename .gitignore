@@ -34,3 +34,6 @@ dist/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Presentation build artifacts
+presentation_build/
